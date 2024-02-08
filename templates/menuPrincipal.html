@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% block title %} Página Principal {% endblock %}
+
+{% block content %}
+    <div class="container mt-1">
+        <div id="imagenPromocion" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ url_for('static', filename='img/slider-home.jpg') }}" class="d-block w-100" alt="Promoción home">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Navidad</h5>
+                        <p>Los regalos perfectos <br> para la familia</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='img/slider-home-adidas.jpg') }}" class="d-block w-100" alt="Promoción adidas">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Adidas</h5>
+                        <p>Conoce lo mas nuevo <br> de Adidas</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='img/slider-home-jordan.jpg') }}" class="d-block w-100" alt="Promoción nike">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Jordan</h5>
+                        <p>Un homenaje al legado <br> del inigualable MJ</p>
+                    </div>
+                </div>
+            </div>
+        
+            <a class="carousel-control-prev" href="#imagenPromocion" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#imagenPromocion" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+
+        <div class="contenedor-boton mt-5">
+            <a href="productosCliente" class="boton-compra">Comprar</a>
+        </div>
+
+        <div id="tituloMarcas" class="text-center mb-5 mt-5">
+            <h2>Las Mejores Marcas</h2>
+        </div>
+
+        <div id="barraMarcas" class="mt-5">
+            <div class="marca">
+                <img src="{{ url_for('static', filename='img/logo-adidas.png') }}" alt="Adidas">
+            </div>
+            <div class="marca">
+                <img src="{{ url_for('static', filename='img/logo-jordan.png') }}" alt="Jordan">
+            </div>
+            <div class="marca">
+                <img src="{{ url_for('static', filename='img/logo-nike.jpg') }}" alt="Nike">
+            </div>
+            <div class="marca">
+                <img src="{{ url_for('static', filename='img/logo-newbalance.png') }}" alt="NewBalance">
+            </div>
+        </div>  
+
+        <div id="seccionGenero" class="mb-5 mt-5">
+            <div class="genero-section" id="hombres">
+                <div class="text-center mb-5 mt-5">
+                    <h2>Ropa para Hombres</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="ropa-item">
+                            <img src="{{ url_for('static', filename='img/hombre-champion.jpg') }}" alt="Ropa Hombre 1">
+                            <h4>Champion</h4>
+                            <p>Siente el poder con Marvel</p>
+                            <a href="productosCliente" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="ropa-item">
+                            <img src="{{ url_for('static', filename='img/hombre-salomon.jpg') }}" alt="Ropa Hombre 2">
+                            <h4>Salomon</h4>
+                            <p>Descubre el equilibrio entre comodidad y rendimiento</p>
+                            <a href="productosCliente" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="genero-section" id="mujeres">
+                <div class="text-center mb-5 mt-5">
+                    <h2>Ropa para Mujeres</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="ropa-item">
+                            <img src="{{ url_for('static', filename='img/mujer-newbalance.jpg') }}" alt="Ropa Mujer">
+                            <h4>New Balance</h4>
+                            <p>Explora tu potencial con New Balance</p>
+                            <a href="productosCliente" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="ropa-item">
+                            <img src="{{ url_for('static', filename='img/mujer-on.jpg') }}" alt="Ropa Mujer 2">
+                            <h4>On</h4>
+                            <p>Haz cada paso significatico</p>
+                            <a href="productosCliente" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="genero-section" id="ninos">
+                <div class="text-center mb-5 mt-5">
+                    <h2>Ropa para Niños</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="ropa-item">
+                            <img src="{{ url_for('static', filename='img/niños-crocs.jpg') }}" alt="Ropa Niños 1">
+                            <h4>Crocs</h4>
+                            <p>La manera más divertida de caminar</p>
+                            <a href="productosCliente" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="ropa-item">
+                            <img src="{{ url_for('static', filename='img/niños-sneakers.jpg') }}" alt="Ropa Niños 2">
+                            <h4>Sneakers</h4>
+                            <p>Estilo que crece con tus consentidos</p>
+                            <a href="productosCliente" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{%extends 'base.html'%}
+{%block title%}
+CUENTAS</title>
+{%endblock%}
+{%block content%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<div class="container">
+    <div class="row-table">
+    <h1 class="text-center">Usuarios en sistema</h1>
+    <a href="/registroUsuarios"><button class="btn btn-primary">Agregar usuario</button></a>
+    <Table id="table" class="table table-responsive-lg">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>nombre</th>
+            <th>email</th>
+            <th>rol</th>
+            <th>Opciones</th>
+            <th>privilegios</th>
+        </tr>
+    </thead>
+        {% for u in usuario %}
+        <tr>
+            <td>{{u.idUsuario}}</td>
+            <td>{{u.username}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.role}}</td>
+            <td><a href="/actualizarUsuario/{{u.idUsuario}}"> <button class="btn btn-primary">actualizar</button></a>
+                <a href="/eliminarUsuario/{{u.idUsuario}}"><button class="btn btn-danger">eliminar</button></a>
+            </td>
+            <td>
+                {%if not (u.idUsuario == current_user.idUsuario)%}
+                {%if u.role=='Administrador'%}  
+                   
+                        <a href="/hacerCliente/{{u.idUsuario}}"><button class="btn btn-danger">Hacer Cliente</button></a>
+                   {%endif%}
+                {%if u.role=='Cliente'%}
+                   <a href="/hacerAdmin/{{u.idUsuario}}"><button class="btn btn-danger">Hacer Administrador</button></a>
+                {%endif%}
+                {%endif%}
+                
+                
+                
+
+            </td>
+        </tr>
+        {%endfor%}
+    </Table>
+
+{%endblock%}

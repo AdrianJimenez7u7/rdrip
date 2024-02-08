@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%block title%}
+CUENTAS</title>
+{%endblock%}
+{%block content%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+
+<div class="container">
+    <div class="row-table">
+    <h1 class="text-center">DEPARTAMENTOS REGISTRADOS</h1>
+    <a href="/registroDepartamento"><button class="btn btn-primary">Agregar Departamento</button></a>
+    <Table id="table" class="table table-responsive-lg">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>departamento</th>
+                <th>estado</th>
+                <th>acciones</th>
+            </tr>
+        </thead>
+        {% for d in departamento %}
+        <tr>
+            <td>{{d.idDepartamento}}</td>
+            <td>{{d.nombre}}</td>
+            <td>{{d.estado}}</td>
+            <td><a href="/actualizarDepartamento/{{d.idDepartamento}}"> <button class="btn btn-warning">actualizar</button></a>
+                <a href="/eliminarDepartamento/{{d.idDepartamento}}"><button class="btn btn-danger">eliminar</button></a>
+            </td>
+        </tr>
+        {%endfor%}
+    </Table>
+    </div>
+</div>
+
+
+{%endblock%}

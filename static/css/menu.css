@@ -1,0 +1,67 @@
+.navbar {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar img {
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: #000 !important;
+    font-size: 15px;
+    margin: 0 10px;
+    text-transform: uppercase;
+}
+
+.navbar form {
+    margin-left: auto;
+}
+
+.navbar form input,
+.navbar form button {
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+}
+
+#mensajeSuperior {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.btn-outline-success {
+    color: #000;
+    border-color: #000;
+    border-radius: 25px;
+}
+
+.btn-outline-success:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.dropdown-menu {
+    width: 300px;
+    animation: expandDropdown 0.3s ease-in-out;
+}
+
+.dropdown-item {
+    font-size: 18px;
+}
+
+@keyframes expandDropdown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

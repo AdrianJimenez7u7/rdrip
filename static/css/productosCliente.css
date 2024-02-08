@@ -1,0 +1,82 @@
+.navbar {
+    background-color: #232f3e;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #681818;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-color: #ffffff;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.list-group-item {
+    font-size: 15px;
+    background-color: #f8f9fa;
+    color: #343a40;
+    border: 1px solid #dee2e6;
+    margin-bottom: 10px;
+}
+
+.btn.btn-primary {
+    font-size: 1.2em;
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn.btn-primary:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+}
+
+.card-text{
+    font-size: 1.5em;
+}
+
+.card-title {
+    font-size: 1.8em;
+}
+
+.list-group-item {
+    font-size: 15px;
+    color: #000;
+    border: 1px solid #333;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.list-group-item:hover {
+    background-color: #000000;
+    color: #fff;
+}
+
+.carrito {
+    width: 30px; /* Ajusta el ancho según tus preferencias */
+    height: 30px; /* Ajusta la altura según tus preferencias */
+}
+
+#carritoContainer {
+    position: fixed;
+    top: 50px; /* Ajusta la posición según tus preferencias */
+    right: 20px; /* Ajusta la posición según tus preferencias */
+    background-color: #fff; /* Fondo blanco o el color que desees */
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+

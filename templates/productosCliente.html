@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %} Productos {% endblock %}
+
+{% block content %}
+<div id="ClienteBody">
+    <div class="container mt-4">
+        <a href="{{url_for('carrito')}}" id="enlace">
+            <img class="carrito mb-4" src="{{ url_for('static', filename='img/cart.png') }}" alt="Carrito de Compras" id="iconoCarrito" >
+        </a>
+        
+        <div class="row" id="clientes">
+
+            <div class="col-md-3">
+                <h4>Categorías</h4>
+                <li class="list-group-item">
+                    Todas
+                </li>
+                <ul class="list-group">
+                    {%for dep in deps%}
+                        <li class="list-group-item">
+                            {{dep.nombre}}
+                        </li>
+                    {%endfor%}
+                </ul>
+            </div>
+
+            <div class="col-md-9">
+                <div class="mb-4">
+                    <h2>Productos Destacados</h2>
+                </div>
+                <div class="row">
+                    {% for p in producto %}
+                        <div class="col-md-4" data-categoria="{{ p.departamento.nombre }}">
+                            <div class="card">
+                                <img src="/consultarImgProd/{{p.idProducto}}" class="card-img-top" alt="{{p.nombre}}" width="250" height="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{p.nombre}}</h5>
+                                    <p class="card-text">{{p.departamento.nombre}}</p>
+                                    <p class="card-text">${{p.precio}}</p>
+                                    <a href="/agregarCarrito/{{p.idProducto}}" class="btn btn-primary btn-agregar-carrito" data-id="{{p.idProducto}}" data-nombre="{{p.nombre}}" data-precio="{{p.precio}}">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

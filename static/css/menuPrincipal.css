@@ -1,0 +1,129 @@
+.mensaje-top {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    color: #fff;
+}
+
+.carousel-caption h5 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.carousel-caption p {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#barraMarcas {
+    display: flex;
+    justify-content: center;
+}
+
+.marca {
+    margin: 0 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marca img {
+    max-width: 65%;
+    max-height: 65%;
+    object-fit: contain;
+}
+
+#seccionGenero {
+    text-align: center;
+}
+
+.genero-section {
+    margin-bottom: 40px;
+}
+
+.ropa-item {
+    margin-bottom: 30px;
+}
+
+.ropa-item img {
+    max-width: 100%;
+}
+
+.ropa-item h4 {
+    margin-top: 15px;
+    font-size: 1.8em;
+}
+
+.ropa-item p {
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.ropa-item a.btn {
+    font-size: 1.5em;
+}
+
+.form-inline .btn-outline-success {
+    color: #000;
+    border-color: #000;
+    border-radius: 25px;
+}
+
+.form-inline .btn-outline-success:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.ropa-item a.btn {
+    font-size: 1.5em;
+    color: #000;
+    background-color: transparent;
+    border: 2px solid #000;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.contenedor-boton {
+    text-align: center;
+}
+
+.boton-compra {
+    font-size: 15px;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.boton-compra:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+}
+
+
+
+
+

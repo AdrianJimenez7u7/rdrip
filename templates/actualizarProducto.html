@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Actualizar Producto
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <section class="form-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 form-sec">
+                    <h2 class="text-center">Actualizar Producto</h2>
+                    <form class="registro-form" action="/actualizarProducto/{{producto.idProducto}}" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label  class="text-uppercase">Nombre</label>
+                            <input type="text" class="form-control" placeholder="Nombre del producto" name="nombre" value="{{producto.nombre}}">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-uppercase">Precio</label>
+                            <input type="number" class="form-control" placeholder="precio" name="precio" value="{{producto.precio}}">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-uppercase">Existencia</label>
+                            <input type="number" class="form-control" placeholder="existencia inicial" name="existencia" value="{{producto.existencia}}">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-uppercase">Departamento</label>
+                            <select class="form-control" name="departamento">
+                              {%for dep in deps%}
+                              <option value="{{dep.idDepartamento}}"> {{dep.nombre}}</option>
+                              {%endfor%}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="text-uppercase">foto</label>
+                          <input type="file" class="form-control" placeholder="imagen del producto" name="foto">
+                      </div>
+                        <button type="submit" class="btn btn-primary ">Guardar</button>
+                    </form>
+                    <a href="/productos"><button class="btn btn-danger">Cancelar</button></a>
+                    <a href="/eliminarProducto/{{producto.idProducto}}"><button class="btn btn-danger">eliminar</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

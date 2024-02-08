@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block styles%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{%endblock%}
+{%block title%} 
+Actualizar producto 
+{% endblock %}
+{% block content %}
+<section class="form-block">
+    <div class="container">
+	<div class="row">
+		<div class="col-md-4 form-sec">
+		    <h2 class="text-center">eliminar Producto</h2>
+            <h5 class="text-center">verifique los datos</h5>
+		    <form class="registro-form" action="/eliminarProducto/{{producto.idProducto}}" method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="text-uppercase">Nombre</label>
+    <input type="text" class="form-control" placeholder="" name="nombre" value="{{producto.nombre}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="text-uppercase">precio</label>
+    <input type="number" class="form-control" placeholder="" name="precio" value="{{producto.precio}}" >
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" class="text-uppercase">existencia</label>
+    <input type="number" class="form-control" placeholder="" name="existencia" value="{{producto.existencia}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" class="text-uppercase">departamento</label>
+                    <select type="" class="form-control" placeholder="" name="departamento">
+                        <option value="Activo">tenis</option>
+                        <option value="Agotado">ropa</option>
+                    </select>
+  </div>
+  
+    <div class="form-check">
+    <label class="form-check-label">
+    </label>
+    <button type="submit" class="btn btn-form float-right">eliminar</button>
+  </div>
+  
+</form>
+		</div>
+		<div class="col-md-8 banner-sec">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                 <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+            <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+        <img class="d-block img-fluid" src="{{ url_for('static', filename='img/tenistravis.jpg') }}" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            <h2>CALZA CON ESTILO</h2>
+            <p>Colaboracion Travis Scott</p>
+        </div>	
+  </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid" src="{{ url_for('static', filename='img/j1purple.jpg') }}" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            <h2>jordan 1 high🔥</h2>
+            <p>Consultar existencia</p>
+        </div>	
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid" src="{{ url_for('static', filename='img/travis.jpg') }}" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            <h2>Travis Scott</h2>
+        </div>	
+    </div>
+  </div>
+            </div>	   
+		    
+		</div>
+	</div>
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Registro Producto
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <section class="form-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 form-sec">
+                    <h2 class="text-center">Agregar Metodo de Pago</h2>
+                    <form class="registro-form" action="/registroPago" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label  class="text-uppercase">Banco</label>
+                            <input type="text" class="form-control" placeholder="empresa" name="empresa" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-uppercase">Tipo</label>
+                            <select class="form-control" name="tipo">
+                              <option value="Credito">Credito</option>
+                              <option value="Debito">Debito</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" class="text-uppercase">Tarjeta Pago</label>
+                            <input type="number" class="form-control" placeholder="" name="numero" minlength="15" oninput="validarTarjetaLength(this)" required>
+                          </div>
+                        <button type="submit" class="btn btn-primary ">Guardar</button>
+                    </form>
+                    <a href="/menuPrincipal"><button class="btn btn-danger">Cancelar</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

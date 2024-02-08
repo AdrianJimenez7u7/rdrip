@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %} Carrito de compras {% endblock %}
+
+{% block content %}
+<div id="ClienteBody">
+    <div class="container mt-4">
+        <a href="{{url_for('mostrarProductosCliente')}}" id="enlace">
+            <img class="carrito mb-4" src="{{ url_for('static', filename='img/cart.png') }}" alt="Carrito de Compras" id="iconoCarrito" >
+        </a>
+        
+        <div class="row" id="clientes">
+            <div class="col-md-9">
+                <div class="mb-4">
+                    <h2>Productos en el Carrito</h2>
+                    <div class="col-md-3">
+                        <form action="">
+                            <label class="text-uppercase">tarjeta</label>
+
+                            <select class="form-control" name="metodo" >
+                            {%for m in metodo%}
+                                <option value="{{m.idMetodo}}"> {{m.numero}}</option>
+                            {%endfor%}
+                            </select>
+                            <br>
+                            <button type="submit" class="btn btn-primary">pagar ${{total}}</button>
+                        </form>
+                    </div>
+                    
+
+                </div>
+                <div class="row">
+                    {% for p in producto %}
+                        <div class="col-md-4" >
+                            <div class="card">
+                                <img src="/consultarImgProd/{{p.idProducto}}" class="card-img-top" alt="{{p.nombre}}" width="250" height="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{p.producto.nombre}}</h5>
+                                    <p class="card-text">{{p.producto.nombre}}</p>
+                                    <p class="card-text">${{p.producto.precio}}</p>
+                                    <a href="/eliminarCarrito/{{p.idCarrito}}" class="btn btn-primary btn-agregar-carrito" data-id="{{p.idProducto}}" data-nombre="{{p.nombre}}" data-precio="{{p.precio}}">eliminar del carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
